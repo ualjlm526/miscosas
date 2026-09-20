@@ -1,4 +1,4 @@
-name: Crear APK Objetivo 70
+name: Crear APK Objetivo70
 
 on:
   workflow_dispatch:
@@ -20,16 +20,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Instalar Gradle 9.6
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.6.1'
+      - name: Dar permisos a Gradle
+        run: chmod +x gradlew
 
-      - name: Crear APK
-        run: gradle assembleDebug --no-daemon
+      - name: Compilar APK
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
         with:
-          name: Objetivo70-Android11
+          name: Objetivo70-APK
           path: app/build/outputs/apk/debug/app-debug.apk

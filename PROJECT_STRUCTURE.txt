@@ -1,0 +1,12 @@
+app/src/main/java/com/objetivo70/app/
+├── MainActivity.kt
+├── Objetivo70Application.kt
+├── data.kt                 # Room entities, DAO, DB, repository
+├── viewmodels.kt           # MVVM state and calculations
+├── theme.kt                # Material 3 light/dark theme
+├── mealplan.kt             # Weekly meal plan
+├── ui.kt                   # Screens, navigation, charts, forms
+├── notifications/
+│   └── ReminderManager.kt  # Local reminders
+└── sensors/
+    └── StepSensorManager.kt
